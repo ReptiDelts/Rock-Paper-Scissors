@@ -1,20 +1,24 @@
 from random import randint
 
-choices = ["Rock", "Paper", "Scissors"]
+choices = ["rock", "paper", "scissors"]
 Wins = 0
 Losses = 0 
+player = False
 
 def counter_func():
-    if 1 == Wins and 1 == Losses: 
-        print("You have", Win, "Win and", Losses, "Loss.")
-    elif 1 == Losses:
-        print("You have", Wins, "Wins and", Losses, "Loss.")
-    elif 1 == Wins:
-        print("You have", Wins, "Win and", Losses, "Losses.")
-    else:
-        print("You have", Wins, "Wins and", Losses, "Losses.")
+    pluralwin = "s" if Wins > 1 else ""
+    pluralloss = "es" if Losses > 1 else ""
+    print("You have", Wins, "Win" + pluralwin, "and", Losses, "Loss" + pluralloss,".")
 
-player = False
+
+    # if 1 == Wins and 1 == Losses: 
+     #   print("You have", Win, "Win and", Losses, "Loss.")
+    #elif 1 == Losses:
+     #   print("You have", Wins, "Wins and", Losses, "Loss.")
+    #elif 1 == Wins:
+   #     print("You have", Wins, "Win and", Losses, "Losses.")
+    #else:
+    #    print("You have", Wins, "Wins and", Losses, "Losses.")
 
 while player == False:
     r = randint(0,2)
@@ -22,11 +26,12 @@ while player == False:
     computer = choices[r]
     player = input("Rock, Paper, or Scissors? ")
     print("The computer chose",computer, "and you chose", player)
+    player = player.lower()
     if player == computer:
         print("Tie!")
         counter_func()
-    elif player == "Rock":
-        if computer == "Paper":
+    elif player == "rock":
+        if computer == "paper":
             print("You lose!", computer, "wraps", player) 
             Losses = Losses + 1
             counter_func()  
@@ -34,8 +39,8 @@ while player == False:
             print("You win!", player, "crushes", computer)
             Wins = Wins + 1
             counter_func() 
-    elif player == "Paper":
-        if computer == "Scissors":
+    elif player == "paper":
+        if computer == "scissors":
             print("You lose!", computer, "cuts", player)
             Losses = Losses + 1
             counter_func()  
@@ -43,8 +48,8 @@ while player == False:
             print("You win!", player, "wraps", computer)
             Wins = Wins + 1
             counter_func()   
-    elif player == "Scissors":
-        if computer == "Rock":
+    elif player == "scissors":
+        if computer == "rock":
             print("You lose!", computer, "crushes", player)
             Losses = Losses + 1
             counter_func()  
