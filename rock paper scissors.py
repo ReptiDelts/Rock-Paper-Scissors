@@ -10,16 +10,6 @@ def counter_func():
     pluralloss = "es" if Losses > 1 else ""
     print("You have", Wins, "Win" + pluralwin, "and", Losses, "Loss" + pluralloss,".")
 
-
-    # if 1 == Wins and 1 == Losses: 
-     #   print("You have", Win, "Win and", Losses, "Loss.")
-    #elif 1 == Losses:
-     #   print("You have", Wins, "Wins and", Losses, "Loss.")
-    #elif 1 == Wins:
-   #     print("You have", Wins, "Win and", Losses, "Losses.")
-    #else:
-    #    print("You have", Wins, "Wins and", Losses, "Losses.")
-
 while player == False:
     r = randint(0,2)
     # print("rand", r)
@@ -56,7 +46,7 @@ while player == False:
         else:
             print("You win!", player, "cuts", computer)
             Wins = Wins + 1
-            print(counter_func())   
+            counter_func()  
     else:
         print("That's not a valid move. Check your spelling.")
     player = False
